@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .nav-tabs .nav-link.active {
+            border: 1px solid #dee2e6;
+            border-bottom-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="authTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Sign Up</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="authTabContent">
+                    <!-- Login Form -->
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form method="POST" action="/auth">
+                            <div class="form-group">
+                                <label for="loginEmail">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" name="password" required>
+                            </div>
+                            <input type="hidden" name="action" value="login">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                    <!-- Signup Form -->
+                    <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                        <form method="POST" action="/auth">
+                            <div class="form-group">
+                                <label for="signupName">Name</label>
+                                <input type="text" class="form-control" id="signupName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupEmail">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupPassword">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupPhone">Phone Number</label>
+                                <input type="text" class="form-control" id="signupPhone" name="phone" required>
+                            </div>
+                            <input type="hidden" name="action" value="signup">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
